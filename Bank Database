@@ -25,7 +25,7 @@ VALUES
     (14, 'Rewards Credit Card', 'Credit Card', 21.99, 0.00, 0.00),
     (15, 'Auto Loan', 'Loan', 4.25, 0.00, 20000.00);
 
-For this SQL, I will be querying a bank database to see which product is the best option for a certain customer.
+For this project, I will be querying a bank database to see which product is the best option for a certain customer.
 
 Select all the bank product names so we know what our options are. 
 SELECT product_name
