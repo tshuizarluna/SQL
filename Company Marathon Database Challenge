@@ -1,0 +1,28 @@
+In this SQL challenge, I used a database that contains information about a fictional group of coworkers who ran in a marathon sponsored by their fictional company. This database includes each participant's name, the fraction of the marathon they completed, and whether they've run un a marathon before.
+
+CREATE TABLE marathon (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+   participant_name TEXT,
+   previous_experience TEXT,
+   completion_fraction REAL);
+
+INSERT INTO marathon (participant_name, previous_experience,  completion_fraction)
+    VALUES ("Sadie Hawkins", "yes", 1);
+INSERT INTO marathon (participant_name, previous_experience,  completion_fraction)
+    VALUES ("Brandon Flowers", "no", 0.241);
+INSERT INTO marathon (participant_name, previous_experience,  completion_fraction)
+    VALUES ("Michael Scott", "no", 0.804);
+INSERT INTO marathon (participant_name, previous_experience,  completion_fraction)
+    VALUES ("Karamo Brown", "yes", 0.9512);
+INSERT INTO marathon (participant_name, previous_experience,  completion_fraction)
+    VALUES ("Antoni Porowski", "yes", 0.640);
+
+Select every participant name and the percent of the marathon that they completed.
+SELECT participant_name,
+completion_fraction*100 AS completion_percentage
+FROM marathon
+
+Select every participant name and the percent of the marathon that they completed. Show the percent of the marathon completed rounded to one decimal place.
+SELECT participant_name
+, ROUND(completion_fraction*100,1) as completion_percent 
+FROM marathon;
