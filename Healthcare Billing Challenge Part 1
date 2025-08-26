@@ -52,3 +52,25 @@ ELSE "in progress"
 END AS payment_status
 FROM billing
 ;
+
+Alter the previous query to create more categories in payment_status.
+If someone has paid 100% of their bill, write "paid"
+if someone has paid 0%, write “no payment”
+If the patient has paid 75% or more, write "75%+".
+Do the same for 50% and 25%
+If the number is under 25%, write "Under 25%" 
+name the column payment_status
+SELECT patient_id
+, payment_received / procedure_bill
+, CASE
+WHEN (payment_received / procedure_bill) = 1 THEN "paid"
+WHEN (payment_received / procedure_bill) = 0 THEN "no payment"
+WHEN (payment_received / procedure_bill) >= .75 THEN "75%+"
+WHEN (payment_received / procedure_bill) >= .5 THEN "50%+"
+WHEN (payment_received / procedure_bill) >= .25 THEN "25%+"
+ELSE "Under 25%"
+END AS payment_status
+FROM billing
+;
+
+
