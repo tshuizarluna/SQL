@@ -1,1 +1,24 @@
+#This project utilizes the following billing data: 
 
+CREATE TABLE billing (
+    patient_id INTEGER
+  	, insurance_provider TEXT
+    , procedure_code INTEGER
+    , procedure_description TEXT
+    , procedure_cost REAL
+    , procedure_bill REAL
+    , payment_received REAL
+);
+
+
+INSERT INTO billing (patient_id, insurance_provider, procedure_code, procedure_description, procedure_cost, procedure_bill, payment_received)
+VALUES
+    (137845, 'Insurance A', 42213, 'Office Visit', 335.00, 83.75, 35.00)
+  , (187738, 'Insurance C', 85706, 'ECG', 425.00, 63.75, 50.00)
+  , (214007, 'Insurance A', 80048, 'Basic Metabolic Panel', 200.00, 50.00, 0.00)
+  , (250077, 'Insurance B', 80525, 'Complete Blood Count', 225.00, 78.75, 0.00)
+  , (281938, 'Insurance B', 80449, 'Glucose Tolerance Test', 150.00, 52.50, 15.00)
+  , (296309, 'Insurance C', 42213, 'Office Visit', 335.00, 50.25, 30.00)
+  , (301544, 'Insurance C', 80061, 'Lipid Panel', 135.00, 20.25, 20.25)
+  , (390731, 'Insurance B', 80449, 'Glucose Tolerance Test', 150.00, 52.50, 0.00)
+    ;
