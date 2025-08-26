@@ -36,3 +36,9 @@ SELECT patient_id
 FROM billing
 ORDER BY payment_fraction;
 
+Display the patient ID, payment_fraction (copy from the previous query), and add a column displaying the percent of the bill that the patient has paid, rounded to one place. Call the new column payment_percent.
+SELECT patient_id
+, payment_received / procedure_bill AS payment_fraction
+, ROUND((payment_received / procedure_bill)*100, 1) AS payment_percent
+FROM billing;
+
