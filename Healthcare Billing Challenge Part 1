@@ -22,3 +22,8 @@ VALUES
   , (301544, 'Insurance C', 80061, 'Lipid Panel', 135.00, 20.25, 20.25)
   , (390731, 'Insurance B', 80449, 'Glucose Tolerance Test', 150.00, 52.50, 0.00)
     ;
+
+
+#For this project, I displayed the patient ID and created a new column that calculated how much each patient still needs to pay.
+
+
