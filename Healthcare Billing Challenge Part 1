@@ -24,6 +24,15 @@ VALUES
     ;
 
 
-#For this project, I displayed the patient ID and created a new column that calculated how much each patient still needs to pay.
+Display the patient ID and create a new column that calculates how much each patient still needs to pay. Call the new column payment_remaining.
+SELECT patient_id
+, procedure_bill - payment_received AS payment_remaining
+FROM billing;
 
+Select every patient ID, the procedure bill, and create a new column that calculates the fraction of what the patient has paid toward their procedure bill. Call the new column payment_fraction and sort it from low to high.
+SELECT patient_id
+, procedure_bill
+, payment_received / procedure_bill AS payment_fraction
+FROM billing
+ORDER BY payment_fraction;
 
