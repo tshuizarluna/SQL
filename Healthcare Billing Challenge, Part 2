@@ -1,4 +1,4 @@
-#This project utilizes the following Superstore data: 
+#This project utilizes the following billing data: 
 
 CREATE TABLE billing (
     patient_id INTEGER
@@ -46,3 +46,10 @@ HAVING payment_remaining > 150;
 
 Display the insurance providers and the number of patient bills covered by each provider for lab tests all the new column lab_bills.
 Call the new column lab_bills.
+SELECT insurance_provider
+, COUNT (procedure_bill) AS lab_bills
+FROM billing
+WHERE procedure_code LIKE '80%'
+GROUP BY insurance_provider;
+
+Display only insurance companies that have billed more than 3 lab procedures.
