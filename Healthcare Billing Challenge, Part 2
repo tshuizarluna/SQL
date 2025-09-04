@@ -1,3 +1,5 @@
+#This project utilizes the following Superstore data: 
+
 CREATE TABLE billing (
     patient_id INTEGER
   	, insurance_provider TEXT
