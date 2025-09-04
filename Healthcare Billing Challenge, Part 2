@@ -36,3 +36,10 @@ SELECT patient_id
 , SUM(procedure_bill-payment_received) AS payment_remaining
 FROM billing
 GROUP BY patient_id
+
+Display only patients with more than $150 remaining on their payment.
+SELECT patient_id
+, SUM(procedure_bill - payment_received) AS payment_remaining
+FROM billing
+GROUP BY patient_id
+HAVING payment_remaining > 150;
