@@ -30,3 +30,9 @@ VALUES
   , (390731, 'Insurance B', 80048, 'Basic Metabolic Panel', 200.00, 70.00, 0.00)
   , (390731, 'Insurance B', 80449, 'Glucose Tolerance Test', 150.00, 52.50, 0.00)
     ;
+
+Display each patient id and the sum of all of their bills. Keep the new column as payment_remaining.
+SELECT patient_id
+, SUM(procedure_bill-payment_received) AS payment_remaining
+FROM billing
+GROUP BY patient_id
