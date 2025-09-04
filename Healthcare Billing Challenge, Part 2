@@ -53,3 +53,9 @@ WHERE procedure_code LIKE '80%'
 GROUP BY insurance_provider;
 
 Display only insurance companies that have billed more than 3 lab procedures.
+SELECT insurance_provider
+, COUNT (procedure_bill) AS lab_bills
+FROM billing
+WHERE procedure_code LIKE '80%'
+GROUP BY insurance_provider
+HAVING COUNT(procedure_bill) >3;
