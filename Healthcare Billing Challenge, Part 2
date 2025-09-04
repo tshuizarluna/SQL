@@ -43,3 +43,6 @@ SELECT patient_id
 FROM billing
 GROUP BY patient_id
 HAVING payment_remaining > 150;
+
+Display the insurance providers and the number of patient bills covered by each provider for lab tests all the new column lab_bills.
+Call the new column lab_bills.
