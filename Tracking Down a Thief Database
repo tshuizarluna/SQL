@@ -271,4 +271,15 @@ JOIN location_info
 ON suspect_info.suspect_id = location_info.suspect_id
 WHERE cell_location = 'Carnival City'
 AND date_time = '01/13/21 17:01';
-  
+
+Find suspects with associates who have occupational titles containing the word “Specialist,” and who have a relationship to the suspect labeled as “Friend”.
+SELECT suspect_first_name,
+suspect_last_name,
+associate_alias,
+occupation,
+relationship_to_suspect
+FROM suspect_info
+JOIN associates_info
+ON suspect_info.suspect_id = associates_info.suspect_id
+WHERE relationship_to_suspect = 'Friend'
+AND occupation LIKE '%Specialist%';
