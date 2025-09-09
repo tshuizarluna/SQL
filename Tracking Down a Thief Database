@@ -296,3 +296,14 @@ ON suspect_info.suspect_id = vehicle_info.suspect_id
 JOIN location_info
 ON suspect_info.suspect_id = location_info.suspect_id
 WHERE car_type = 'Minivan' AND license_plate LIKE '%D0G';
+
+Find all suspects that have an alibi that contains the word “dog”, “cotton”, or “candy”.
+SELECT suspect_first_name,
+suspect_last_name,
+alibi_statement
+FROM suspect_info
+JOIN alibi_info
+ON suspect_info.suspect_id = alibi_info.suspect_id
+WHERE alibi_statement LIKE '%dog%'
+OR alibi_statement LIKE '%cotton%'
+OR alibi_statement LIKE '%candy%';
