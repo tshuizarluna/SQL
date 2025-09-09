@@ -307,3 +307,16 @@ ON suspect_info.suspect_id = alibi_info.suspect_id
 WHERE alibi_statement LIKE '%dog%'
 OR alibi_statement LIKE '%cotton%'
 OR alibi_statement LIKE '%candy%';
+
+Find all suspects whose data location and alibi location do not match.
+SELECT suspect_info.suspect_id,
+suspect_first_name,
+suspect_last_name,
+cell_location,
+alibi_location
+FROM suspect_info
+JOIN alibi_info
+ON suspect_info.suspect_id = alibi_info.suspect_id
+JOIN location_info
+ON suspect_info.suspect_id = location_info.suspect_id
+WHERE cell_location <> alibi_location;
