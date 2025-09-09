@@ -283,3 +283,16 @@ JOIN associates_info
 ON suspect_info.suspect_id = associates_info.suspect_id
 WHERE relationship_to_suspect = 'Friend'
 AND occupation LIKE '%Specialist%';
+
+Find suspects who own a minivan with a license plate that ends with “D0G”.
+SELECT suspect_first_name,
+suspect_last_name,
+cell_location,
+car_model,
+license_plate
+FROM suspect_info
+JOIN vehicle_info
+ON suspect_info.suspect_id = vehicle_info.suspect_id
+JOIN location_info
+ON suspect_info.suspect_id = location_info.suspect_id
+WHERE car_type = 'Minivan' AND license_plate LIKE '%D0G';
