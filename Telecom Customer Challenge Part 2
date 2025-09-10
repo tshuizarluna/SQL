@@ -46,3 +46,17 @@ FROM customer_subscriptions
 WHERE product_id IN (SELECT product_id
 FROM products
 WHERE product_type='Cell Phone Service');
+
+Write a query that will select the email address of all the customers with the "Internet" product type.
+SELECT email
+FROM customer_subscriptions
+WHERE product_id
+IN (SELECT product_id
+FROM products
+WHERE product_type='Internet');
+
+Write a query that will select the emails of all customers who are paying more than the average price for internet.
+SELECT email
+FROM customer_subscriptions
+WHERE price > (SELECT AVG(monthly_price) FROM products WHERE product_type='Internet');
+
