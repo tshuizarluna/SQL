@@ -41,3 +41,8 @@ VALUES
 #For this project, I used SQL to query a telecommunications company database for information about the company's products and customers.
 
 Write a query that selects the customer id of all the customers who are subscribed to Cell Phone service products.
+SELECT customer_id
+FROM customer_subscriptions
+WHERE product_id IN (SELECT product_id
+FROM products
+WHERE product_type='Cell Phone Service');
