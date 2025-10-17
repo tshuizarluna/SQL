@@ -1,3 +1,5 @@
+#For this project, I worked with a dataset called chinook, which represented a digital media store and included tables for artists, albums, media tracks, invoices, and customers.
+
 #1. 
 SELECT FirstName, LastName, CustomerId, Country 
 FROM chinook.customers 
